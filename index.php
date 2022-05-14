@@ -26,7 +26,7 @@
 		or die('Ошибка соединения с Сервером');
 
 	// $query = "SELECT * FROM `score_list`";
-	$query = "SELECT * FROM `score_list` ORDER BY `score` DESC";
+	$query = "SELECT * FROM `score_list` WHERE approved = 1 ORDER BY `score` DESC";
 
 	$data_query = mysqli_query($dbConnect, $query);
 	if (!$data_query) {

@@ -55,7 +55,14 @@
 		// при клике на ссылку, отправляем методом GET, данные в другой сценарий "removescore.php" на обработку
 		echo '<td> <a href="removescore.php?id=' . $row['id'] . '&amp;date=' . $row['date'] .
 			'&amp;name=' . $row['name'] . '&amp;score=' . $row['score'] .
-			'&amp;images=' . $row['images'] . '"> Удалить </a> </td> </tr>';
+			'&amp;images=' . $row['images'] . '"> Удалить </a> </td> ';
+		
+		// при клике на ссылку, отправляем методом GET, данные в другой сценарий "sanc.php" на обработку
+		if ($row ['approved'] == 0) {
+			echo '<td> <a href="sanc.php?id=' . $row['id'] . '&amp;date=' . $row['date'] .
+			'&amp;name=' . $row['name'] . '&amp;score=' . $row['score'] .
+			'&amp;images=' . $row['images'] . '"> Санкционировать </a> </td> ';
+		}
 	}
 	echo '</table>';
 
